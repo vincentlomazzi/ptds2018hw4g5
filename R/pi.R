@@ -1,4 +1,10 @@
 #' This function makes an approximtion of the number pi
+#'
+#' @param B the length one numeric vector specifying the number of simulations.
+#' @param seed allows the function to have always the same output
+#'
+#' @return two coordinates between -1 and 1 as well as a boolean output for each iterations
+#'
 #' @export
 estimate_pi <- function(B = 5000, seed = 10){
 
@@ -38,7 +44,7 @@ estimate_pi <- function(B = 5000, seed = 10){
   return(rval)
 }
 
-#' This funxtion draws a plot representing the approximtion of the number pi above
+#' This function draws a plot representing the approximtion of the number pi above
 #' @export
 plot.pi <- function(x) {
 
@@ -58,12 +64,3 @@ plot.pi <- function(x) {
           axis.line = element_line('black'), aspect.ratio = 1) +
     labs(x='x',y='y')
 }
-
-# library(roxygen2)
-# library(devtools)
-
-# devtools::document()
-#
-# library(ptds2018hw4g5)
-
-??ptds2018hw4g5

@@ -3,7 +3,7 @@ Type: Package
 Title: Approximation of pi 
 Version: 0.1.0
 Authors: Luca Bron, David Germano, Patrik Grandadam, Vincent Lomazzi, Edgar Raisin
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: The package maintainer <vincent.lomazzi@unil.ch>
 Description: Makes an approximation of the numebr pi and draw a plot of this approximation by plotting a cricle inside a square
 License: What license is it under?
 Encoding: UTF-8

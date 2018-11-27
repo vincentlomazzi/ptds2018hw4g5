@@ -2,10 +2,10 @@
 % Please edit documentation in R/pi.R
 \name{plot.pi}
 \alias{plot.pi}
-\title{This funxtion draws a plot representing the approximtion of the number pi above}
+\title{This function draws a plot representing the approximtion of the number pi above}
 \usage{
 \method{plot}{pi}(x)
 }
 \description{
-This funxtion draws a plot representing the approximtion of the number pi above
+This function draws a plot representing the approximtion of the number pi above
 }
