@@ -62,4 +62,8 @@ plot.pi <- function(x) {
 # library(roxygen2)
 # library(devtools)
 
-devtools::document()
+# devtools::document()
+#
+# library(ptds2018hw4g5)
+
+??ptds2018hw4g5

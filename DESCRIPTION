@@ -1,11 +1,10 @@
 Package: ptds2018hw4g5
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Approximation of pi 
 Version: 0.1.0
-Author: Who wrote it
+Authors: Luca Bron, David Germano, Patrik Grandadam, Vincent Lomazzi, Edgar Raisin
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Makes an approximation of the numebr pi and draw a plot of this approximation by plotting a cricle inside a square
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
