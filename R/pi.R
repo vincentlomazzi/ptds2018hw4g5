@@ -1,7 +1,24 @@
-estimate_pi <- function(B = 5000, seed = 10) {
-  # set a seed
+#' This function makes an approximtion of the number pi
+#' @export
+estimate_pi <- function(B = 5000, seed = 10){
+
+  if (missing(B) && missing(seed)) {
+    message(
+      "No input values. The default values used will be B = 5000 seed = 10"
+    )
+  } else if ((B <= 0 || !(B %% 1 == 0)) && (seed <= 0 || !(seed %% 1 == 0))){
+    stop("Please enter a positive and integer value B and for the seed")
+  } else  if (B <= 0 || !(B %% 1 == 0)) {
+    stop("Please enter a positive and integer value for B")
+  } else if (seed <= 0 || !(seed %% 1 == 0)) {
+    message("Please enter a positive and integer value for the seed")
+  } else if (missing(B)){
+    message("No B value defined. The default value used will be B = 5000")
+  } else if (missing(seed)){
+    message("No seed defined. The default seed will be seed = 10")
+  }
+
   set.seed(seed)
-  # simulate B points
   points <- data.frame(
     x = runif(n = B, min = -1, max = 1),
     y = runif(n = B, min = -1, max = 1),
@@ -9,32 +26,20 @@ estimate_pi <- function(B = 5000, seed = 10) {
   )
   points$inside <- ifelse(points[,1] ^ 2 + points[,2] ^ 2 <= 1, TRUE, FALSE)
 
-  # your loop goes here
-  # i <- 1
-  # inCircle <- 0
-  # for(i in 1:B){
-  #   point <- points[i,3]
-  #   if(point){
-  #     inCircle <- inCircle + 1
-  #   }
-  # }
-  #
-  # estimated_pi <- 4 * inCircle / B
-
   estimated_pi <- 4 * sum(points$inside) / B
 
-  # create a new list
   rval <- list(
     estimated_pi = estimated_pi,
     points = points
   )
-  # assign pi class to rval
+
   class(rval) <- "pi"
-  # return rval
+
   return(rval)
 }
 
-
+#' This funxtion draws a plot representing the approximtion of the number pi above
+#' @export
 plot.pi <- function(x) {
 
   points <- x[["points"]]
@@ -53,3 +58,8 @@ plot.pi <- function(x) {
           axis.line = element_line('black'), aspect.ratio = 1) +
     labs(x='x',y='y')
 }
+
+# library(roxygen2)
+# library(devtools)
+
+devtools::document()
