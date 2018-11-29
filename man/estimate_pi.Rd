@@ -6,6 +6,14 @@
 \usage{
 estimate_pi(B = 5000, seed = 10)
 }
+\arguments{
+\item{B}{the length one numeric vector specifying the number of simulations.}
+
+\item{seed}{allows the function to have always the same output}
+}
+\value{
+two coordinates between -1 and 1 as well as a boolean output for each iterations
+}
 \description{
 This function makes an approximtion of the number pi
 }
