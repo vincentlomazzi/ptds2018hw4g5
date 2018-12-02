@@ -110,9 +110,37 @@ plot.pi <- function(x) {
 Rcpp::sourceCpp("src/is_inside.cpp")
 estimate_pi2 <- function(B = 5000, seed = 10){
   set.seed(seed)
-  my_points <- df_pi(B)  # generating random points from the df_pi function in c++
-  inside <- is_inside(my_points)  # checking if the points are inside  the circle
+
+  if (missing(B) && missing(seed)) {
+    message(
+      "No input values. The default values used will be B = 5000 seed = 10"
+    )
+  } else if ((B <= 0 || !(B %% 1 == 0)) && (seed <= 0 || !(seed %% 1 == 0))){
+    stop("Please enter a positive and integer value B and for the seed")
+  } else  if (B <= 0 || !(B %% 1 == 0)) {
+    stop("Please enter a positive and integer value for B")
+  } else if (seed <= 0 || !(seed %% 1 == 0)) {
+    message("Please enter a positive and integer value for the seed")
+  } else if (missing(B)){
+    message("No B value defined. The default value used will be B = 5000")
+  } else if (missing(seed)){
+    message("No seed defined. The default seed will be seed = 10")
+  }
+
+  points <- df_pi(B)  # generating random points from the df_pi function in c++
+  inside <- is_inside(points)  # checking if the points are inside  the circle
+  points <- data.frame(points, inside)
+  colnames(points) <- c("x","y", "inside")
   estimated_pi2 <- 4 * sum(inside) / B
-  return(estimated_pi2)
+
+  rval <- list(
+    estimated_pi2 = estimated_pi2,
+    points = points
+  )
+
+  class(rval) <- "pi"
+
+  return(rval)
 }
+
 

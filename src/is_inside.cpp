@@ -18,6 +18,7 @@ LogicalVector is_inside(NumericMatrix points) {
 }
 
 
+
 // [[Rcpp::export]]
 NumericMatrix df_pi(int B){
 
