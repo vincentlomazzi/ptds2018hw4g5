@@ -64,3 +64,15 @@ plot.pi <- function(x) {
           axis.line = element_line('black'), aspect.ratio = 1) +
     labs(x='x',y='y')
 }
+
+#' This function makes an approximtion of the number pi by using is_inside instead of a for loop.
+#' @export
+#'
+estimate_pi2 <- function(B = 5000, seed = 10){
+  set.seed(seed)
+
+  my_points <- df_pi(B)  # generating random points from the df_pi function in c++
+  inside <- is_inside(my_points)  # checking if the points are inside  the circle
+  estimated_pi2 <- 4 * sum(inside) / B
+  return(estimated_pi2)
+}

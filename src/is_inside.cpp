@@ -29,6 +29,3 @@ NumericMatrix df_pi(int B){
   return points;
 }
 
-
-
-
