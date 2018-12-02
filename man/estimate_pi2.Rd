@@ -17,8 +17,8 @@ output for each iterations
 }
 \description{
 This function makes an approximtion of the number pi based on a
-random drawing of points between -1 and 1 and establishes whether they fall or
-not within a circle of radius 1 using c++.
+random drawing of points between -1 and 1 and establishes whether they are or
+not in a circle of radius 1 using c++.
 }
 \examples{
 estimate_pi2(B = 5000)

@@ -25,6 +25,3 @@ Imports:
 RoxygenNote: 6.1.1
 LinkingTo: 
     Rcpp
-
-
-

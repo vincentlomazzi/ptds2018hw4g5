@@ -1,19 +1,19 @@
-#' @title Monte Carlo estimation of Pi
-#' @description This function makes an approximtion of the number pi based on a
-#' random drawing of points between -1 and 1 and establishes whether they fall or
-#' not within a circle of radius 1.
-#' @param B the length one numeric vector specifying the number of simulations.
-#' @param seed allows the function to have always the same output
-#' @return A matrix of two coordinates between -1 and 1 as well as a boolean
-#' output for each iterations
-#' @author Germano David
-#' @author Lomazzi Vincent
-#' @author Bron Luca
-#' @author Raisin Edgar
-#' @author Grandadam Patrik
-#' @export
-#' @examples
-#' estimate_pi(B = 5000)
+#'@title Monte Carlo estimation of Pi
+#'@description This function makes an approximtion of the number pi based on a
+#'random drawing of points between -1 and 1 and establishes whether they are or
+#'not in a circle of radius 1.
+#'@param B the length one numeric vector specifying the number of simulations.
+#'@param seed allows the function to have always the same output
+#'@return A matrix of two coordinates between -1 and 1 as well as a boolean
+#'output for each iterations
+#'@author Germano David
+#'@author Lomazzi Vincent
+#'@author Bron Luca
+#'@author Raisin Edgar
+#'@author Grandadam Patrik
+#'@export
+#'@examples
+#'estimate_pi(B = 5000)
 estimate_pi <- function(B = 5000, seed = 10){
 
   if (missing(B) && missing(seed)) {
@@ -52,20 +52,20 @@ estimate_pi <- function(B = 5000, seed = 10){
   return(rval)
 }
 
-#' @title Plot objects of resulting from the estimate_pi function
-#' @description This function draws a plot representing the approximtion of the
-#' number pi obtained with the estimate_pi function
-#' @param x An output from the estimate_pi function
-#' @return A plot of the simulated points
-#' @author Germano David
-#' @author Lomazzi Vincent
-#' @author Bron Luca
-#' @author Raisin Edgar
-#' @author Grandadam Patrik
-#' @export
-#' @examples
-#' estimated_pi <- estimate_pi(5000)
-#' plot(estimated_pi)
+#'@title Plot objects of resulting from the estimate_pi function
+#'@description This function draws a plot representing the approximtion of the
+#'number pi obtained with the estimate_pi function
+#'@param x An output from the estimate_pi function
+#'@return A plot of the simulated points
+#'@author Germano David
+#'@author Lomazzi Vincent
+#'@author Bron Luca
+#'@author Raisin Edgar
+#'@author Grandadam Patrik
+#'@export
+#'@examples
+#'estimated_pi <- estimate_pi(5000)
+#'plot(estimated_pi)
 
 plot.pi <- function(x) {
 
@@ -86,23 +86,22 @@ plot.pi <- function(x) {
     ggplot2::labs(x = 'x', y = 'y')
 }
 
-#' @title Monte Carlo estimation of Pi with c++
-#' @description This function makes an approximtion of the number pi based on a
-#' random drawing of points between -1 and 1 and establishes whether they fall or
-#' not within a circle of radius 1 using c++.
-#' @param B the length one numeric vector specifying the number of simulations.
-#' @param seed allows the function to have always the same output
-#' @return A matrix of two coordinates between -1 and 1 as well as a boolean
-#' output for each iterations
-#' @author Germano David
-#' @author Lomazzi Vincent
-#' @author Bron Luca
-#' @author Raisin Edgar
-#' @author Grandadam Patrik
-#' @export
-#' @examples
-#' estimate_pi2(B = 5000)
-
+#'@title Monte Carlo estimation of Pi with c++
+#'@description This function makes an approximtion of the number pi based on a
+#'random drawing of points between -1 and 1 and establishes whether they are or
+#'not in a circle of radius 1 using c++.
+#'@param B the length one numeric vector specifying the number of simulations.
+#'@param seed allows the function to have always the same output
+#'@return A matrix of two coordinates between -1 and 1 as well as a boolean
+#'output for each iterations
+#'@author Germano David
+#'@author Lomazzi Vincent
+#'@author Bron Luca
+#'@author Raisin Edgar
+#'@author Grandadam Patrik
+#'@export
+#'@examples
+#'estimate_pi2(B = 5000)
 estimate_pi2 <- function(B = 5000, seed = 10){
   set.seed(seed)
 
@@ -137,6 +136,7 @@ estimate_pi2 <- function(B = 5000, seed = 10){
 
   return(rval)
 }
+
 
 
 
