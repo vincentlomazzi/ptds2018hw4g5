@@ -2,12 +2,29 @@ Package: ptds2018hw4g5
 Type: Package
 Title: Approximation of pi 
 Version: 0.1.0
-Authors: Luca Bron, David Germano, Patrik Grandadam, Vincent Lomazzi, Edgar Raisin
+Authors@R: c(
+    person("Vincent", "Lomazzi", email = "Vincent.Lomazzi@unil.ch",
+    role = c("aut", "cre")),
+    person("Luca", "Bron", email = "Luca.email@unil.ch", role = "aut"),
+    person("David", "Germano", email = "David.Germano@unil.ch", role = "aut"),
+    person("Patrik", "Grandadam", email = "Patrik.Grandadam@unil.ch", 
+    role = "aut"),
+    person("Edgar", "Raisin", email = "Edgar.Raisin@unil.ch",
+    role = "aut"))
 Maintainer: The package maintainer <vincent.lomazzi@unil.ch>
 Description: Makes an approximation of the numebr pi and draw a plot of this approximation by plotting a cricle inside a square
-License: What license is it under?
+License: No copyright
 Encoding: UTF-8
 LazyData: true
+Imports:
+    Rcpp,
+    shiny (>= 1.2.0),
+    ggplot2,
+    dplyr,
+    magrittr
 RoxygenNote: 6.1.1
-LinkingTo: Rcpp
-Imports: Rcpp
+LinkingTo: 
+    Rcpp
+
+
+

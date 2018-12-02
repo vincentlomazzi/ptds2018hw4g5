@@ -2,10 +2,8 @@
 #' @description This function makes an approximtion of the number pi based on a
 #' random drawing of points between -1 and 1 and establishes whether they fall or
 #' not within a circle of radius 1.
-#'
 #' @param B the length one numeric vector specifying the number of simulations.
 #' @param seed allows the function to have always the same output
-#'
 #' @return A matrix of two coordinates between -1 and 1 as well as a boolean
 #' output for each iterations
 #' @author Germano David
@@ -54,7 +52,6 @@ estimate_pi <- function(B = 5000, seed = 10){
   return(rval)
 }
 
-#'
 #' @title Plot objects of resulting from the estimate_pi function
 #' @description This function draws a plot representing the approximtion of the
 #' number pi obtained with the estimate_pi function
@@ -93,10 +90,8 @@ plot.pi <- function(x) {
 #' @description This function makes an approximtion of the number pi based on a
 #' random drawing of points between -1 and 1 and establishes whether they fall or
 #' not within a circle of radius 1 using c++.
-#'
 #' @param B the length one numeric vector specifying the number of simulations.
 #' @param seed allows the function to have always the same output
-#'
 #' @return A matrix of two coordinates between -1 and 1 as well as a boolean
 #' output for each iterations
 #' @author Germano David
@@ -107,7 +102,7 @@ plot.pi <- function(x) {
 #' @export
 #' @examples
 #' estimate_pi2(B = 5000)
-Rcpp::sourceCpp("src/is_inside.cpp")
+
 estimate_pi2 <- function(B = 5000, seed = 10){
   set.seed(seed)
 
@@ -142,5 +137,6 @@ estimate_pi2 <- function(B = 5000, seed = 10){
 
   return(rval)
 }
+
 
 
