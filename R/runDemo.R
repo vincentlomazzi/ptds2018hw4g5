@@ -1,3 +1,13 @@
+#' @title Shiny App for estimating Pi
+#'
+#' @description Shiny App used to estimate pi and plot the corresponding graph
+#' with the different functions estimate_pi and estimate_pi2 and varying the
+#' number of generated points and the seed.
+#' @author Bron Luca
+#' @author Germano David
+#' @author Grandadam Patrik
+#' @author Lomazzi Vincent
+#' @author Raisin Edgar
 #' @export
 runDemo <- function() {
   # REPLACE N BY YOUR GROUP NUMBER AND DELETE THIS COMMENT
