@@ -2,7 +2,7 @@
 % Please edit documentation in R/pi.R
 \name{estimate_pi}
 \alias{estimate_pi}
-\title{This function makes an approximtion of the number pi}
+\title{Monte Carlo estimation of Pi}
 \usage{
 estimate_pi(B = 5000, seed = 10)
 }
@@ -12,8 +12,25 @@ estimate_pi(B = 5000, seed = 10)
 \item{seed}{allows the function to have always the same output}
 }
 \value{
-two coordinates between -1 and 1 as well as a boolean output for each iterations
+A matrix of two coordinates between -1 and 1 as well as a boolean
+output for each iterations
 }
 \description{
-This function makes an approximtion of the number pi
+This function makes an approximtion of the number pi based on a
+random drawing of points between -1 and 1 and establishes whether they fall or
+not within a circle of radius 1.
+}
+\examples{
+estimate_pi(B = 5000)
+}
+\author{
+Germano David
+
+Lomazzi Vincent
+
+Bron Luca
+
+Raisin Edgar
+
+Grandadam Patrik
 }

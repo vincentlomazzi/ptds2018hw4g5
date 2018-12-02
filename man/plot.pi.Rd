@@ -2,10 +2,32 @@
 % Please edit documentation in R/pi.R
 \name{plot.pi}
 \alias{plot.pi}
-\title{This function draws a plot representing the approximtion of the number pi above}
+\title{Plot objects of resulting from the estimate_pi function}
 \usage{
 \method{plot}{pi}(x)
 }
+\arguments{
+\item{x}{An output from the estimate_pi function}
+}
+\value{
+A plot of the simulated points
+}
 \description{
-This function draws a plot representing the approximtion of the number pi above
+This function draws a plot representing the approximtion of the
+number pi obtained with the estimate_pi function
+}
+\examples{
+estimated_pi <- estimate_pi(5000)
+plot(estimated_pi)
+}
+\author{
+Germano David
+
+Lomazzi Vincent
+
+Bron Luca
+
+Raisin Edgar
+
+Grandadam Patrik
 }

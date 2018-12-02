@@ -1,11 +1,21 @@
-#' This function makes an approximtion of the number pi
+#' @title Monte Carlo estimation of Pi
+#' @description This function makes an approximtion of the number pi based on a
+#' random drawing of points between -1 and 1 and establishes whether they fall or
+#' not within a circle of radius 1.
 #'
 #' @param B the length one numeric vector specifying the number of simulations.
 #' @param seed allows the function to have always the same output
 #'
-#' @return two coordinates between -1 and 1 as well as a boolean output for each iterations
-#'
+#' @return A matrix of two coordinates between -1 and 1 as well as a boolean
+#' output for each iterations
+#' @author Germano David
+#' @author Lomazzi Vincent
+#' @author Bron Luca
+#' @author Raisin Edgar
+#' @author Grandadam Patrik
 #' @export
+#' @examples
+#' estimate_pi(B = 5000)
 estimate_pi <- function(B = 5000, seed = 10){
 
   if (missing(B) && missing(seed)) {
@@ -44,30 +54,62 @@ estimate_pi <- function(B = 5000, seed = 10){
   return(rval)
 }
 
-#' This function draws a plot representing the approximtion of the number pi above
+#'
+#' @title Plot objects of resulting from the estimate_pi function
+#' @description This function draws a plot representing the approximtion of the
+#' number pi obtained with the estimate_pi function
+#' @param x An output from the estimate_pi function
+#' @return A plot of the simulated points
+#' @author Germano David
+#' @author Lomazzi Vincent
+#' @author Bron Luca
+#' @author Raisin Edgar
+#' @author Grandadam Patrik
 #' @export
+#' @examples
+#' estimated_pi <- estimate_pi(5000)
+#' plot(estimated_pi)
+
 plot.pi <- function(x) {
 
   points <- x[["points"]]
 
-  ggplot(as.data.frame(points), aes(x, y, color = inside))+
-    geom_point() +
-    geom_rect(aes(xmin = -1, xmax = 1, ymin = -1, ymax = 1),
+  ggplot2::ggplot(as.data.frame(points), ggplot2::aes(x, y, color = inside))+
+    ggplot2::geom_point() +
+    ggplot2::geom_rect(ggplot2::aes(xmin = -1, xmax = 1, ymin = -1, ymax = 1),
               colour = "blue", alpha = 0, linetype = 2) +
-    annotate("path",
+    ggplot2::annotate("path",
              x = cos(seq(0, 2 * pi, length.out = 100)),
              y = sin(seq(0, 2 * pi, length.out = 100))) +
-    theme(legend.position = 'none',
-          panel.background = element_rect(fill = 'white', color = 'black'),
-          panel.grid.minor = element_blank(),
-          panel.grid.major = element_line('grey', linetype = 'dashed'),
-          axis.line = element_line('black'), aspect.ratio = 1) +
-    labs(x='x',y='y')
+    ggplot2::theme(legend.position = 'none',
+          panel.background = ggplot2::element_rect(fill = 'white', color = 'black'),
+          panel.grid.minor = ggplot2::element_blank(),
+          panel.grid.major = ggplot2::element_line('grey', linetype = 'dashed'),
+          axis.line = ggplot2::element_line('black'), aspect.ratio = 1) +
+    ggplot2::labs(x = 'x', y = 'y')
 }
 
-#' This function makes an approximtion of the number pi by using is_inside instead of a for loop.
-#' @export
+#' @title Monte Carlo estimation of Pi with c++
+#' @description This function makes an approximtion of the number pi based on a
+#' random drawing of points between -1 and 1 and establishes whether they fall or
+#' not within a circle of radius 1 using c++.
 #'
+#' @param B the length one numeric vector specifying the number of simulations.
+#' @param seed allows the function to have always the same output
+#'
+#' @return A matrix of two coordinates between -1 and 1 as well as a boolean
+#' output for each iterations
+#' @author Germano David
+#' @author Lomazzi Vincent
+#' @author Bron Luca
+#' @author Raisin Edgar
+#' @author Grandadam Patrik
+#' @export
+#' @examples
+#' estimate_pi2(B = 5000)
+
+setwd("./src")
+Rcpp::sourceCpp("is_inside.cpp")
 estimate_pi2 <- function(B = 5000, seed = 10){
   set.seed(seed)
 
