@@ -16,9 +16,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// df_pi
+NumericMatrix df_pi(int B);
+RcppExport SEXP _ptds2018hw4g5_df_pi(SEXP BSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type B(BSEXP);
+    rcpp_result_gen = Rcpp::wrap(df_pi(B));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ptds2018hw4g5_is_inside", (DL_FUNC) &_ptds2018hw4g5_is_inside, 1},
+    {"_ptds2018hw4g5_df_pi", (DL_FUNC) &_ptds2018hw4g5_df_pi, 1},
     {NULL, NULL, 0}
 };
 

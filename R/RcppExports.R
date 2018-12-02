@@ -5,3 +5,7 @@ is_inside <- function(points) {
     .Call('_ptds2018hw4g5_is_inside', PACKAGE = 'ptds2018hw4g5', points)
 }
 
+df_pi <- function(B) {
+    .Call('_ptds2018hw4g5_df_pi', PACKAGE = 'ptds2018hw4g5', B)
+}
+
