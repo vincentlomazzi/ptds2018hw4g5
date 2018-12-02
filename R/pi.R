@@ -108,8 +108,7 @@ plot.pi <- function(x) {
 #' @examples
 #' estimate_pi2(B = 5000)
 
-setwd("./src")
-Rcpp::sourceCpp("is_inside.cpp")
+Rcpp::sourceCpp("src/is_inside.cpp")
 estimate_pi2 <- function(B = 5000, seed = 10){
   set.seed(seed)
 
@@ -118,3 +117,4 @@ estimate_pi2 <- function(B = 5000, seed = 10){
   estimated_pi2 <- 4 * sum(inside) / B
   return(estimated_pi2)
 }
+
