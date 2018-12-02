@@ -107,11 +107,9 @@ plot.pi <- function(x) {
 #' @export
 #' @examples
 #' estimate_pi2(B = 5000)
-
 Rcpp::sourceCpp("src/is_inside.cpp")
 estimate_pi2 <- function(B = 5000, seed = 10){
   set.seed(seed)
-
   my_points <- df_pi(B)  # generating random points from the df_pi function in c++
   inside <- is_inside(my_points)  # checking if the points are inside  the circle
   estimated_pi2 <- 4 * sum(inside) / B

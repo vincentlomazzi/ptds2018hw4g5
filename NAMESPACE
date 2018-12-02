@@ -3,5 +3,3 @@
 S3method(plot,pi)
 export()
 export(estimate_pi)
-importFrom(Rcpp,sourceCpp)
-useDynLib(ptds2018hw4g5)
